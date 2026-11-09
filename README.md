@@ -16,7 +16,7 @@ Folder: `2-Django-Calculator`
 
 ```
 cd 2-Django-Calculator
-pip install django
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
@@ -28,6 +28,29 @@ Open http://127.0.0.1:8000/
 - `calculator/templates/calculator/home.html` – the UI
 - Run the tests: `python manage.py test calculator`
 - Admin panel (optional): `python manage.py createsuperuser`, then go to /admin/
+
+## 4. Figma – Spatia (AR furniture store website)
+Folder: `Figma Website`
+
+A mobile-first furniture store where shoppers preview products in 3D and in their own room with AR,
+then buy with one tap. Designed in Figma and built with Figma Make as a Next.js + Payload CMS app.
+
+- `app/(frontend)/SpatiaApp.tsx` – the store UI (home, product, AR view, checkout)
+- `app/(frontend)/api/auth/` – sign up, log in, log out and current-user routes
+- `app/(payload)/` – Payload CMS admin panel (`/admin`) and REST / GraphQL API (`/api`)
+- `src/payload.config.ts` and `src/collections/` – CMS configuration and collections
+- `public/assets/` – room photos used in the design
+
+To run it locally you need Node.js 24+ and pnpm, plus the Figma environment values
+(`FIGMA_PUBLIC_URL`, `FIGMA_CONTENT_API_URL`, `FIGMA_CONTENT_API_CONTENT_SYSTEM_ID`, `FIGMA_OAUTH_CLIENT_ID`):
+
+```
+cd "Figma Website"
+pnpm install
+pnpm dev
+```
+The scripts use Unix-style environment variables, so run them in Git Bash (not PowerShell or cmd).
+Open http://localhost:3000/
 
 ## 5. Mini Project – Constellation Memory Map
 Folder: `5-Constellation-Memory-Map`
